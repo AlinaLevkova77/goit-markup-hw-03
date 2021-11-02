@@ -7,6 +7,7 @@
   --secondary-bg-color: #f5f4fa;
   --gray-bg-color: #2f303a;
   --footer-text-color: rgba(255, 255, 255, 0.6);
+  --flex-element-gar: 30px;
 }
 h1,
 h2,
@@ -44,7 +45,7 @@ a {
 }
 /* Container */
 .container {
-  width: 1200px;
+  width: 1230px;
   padding-left: 15px;
   padding-right: 15px;
   margin-left: auto;
@@ -56,9 +57,7 @@ a {
   align-items: center;
 }
 .header {
-  padding-top: 32px;
-  padding-bottom: 32px;
-  border: 1px solid #ececec;
+  border-bottom: 1px solid #ececec;
 }
 .header-title {
   margin-right: 93px;
@@ -163,29 +162,46 @@ a {
   line-height: 1.2;
   letter-spacing: 0.06em;
 }
+/* Sections */
 .sections {
   padding-top: 94px;
   padding-bottom: 94px;
 }
 .advantages-list {
-  display: grid;
-  grid-template-columns: repeat(4, 1fr);
-  gap: 30px;
+  display: flex;
+  flex-wrap: wrap;
+  padding: 0;
+  margin: 0;
+  list-style: none;
+  margin-left: -30px;
+  margin-top: -30px;
 }
+.advantages-list > .advantages-text {
+  flex-basis: calc(100% / 4 - var(--flex-element-gar));
+  margin-left: var(--flex-element-gar);
+  margin-top: var(--flex-element-gar);
+}
+
 .section-title {
-  margin-bottom: 10px;
   color: var(--title-text-color);
   font-size: 14px;
   line-height: 1.7;
   text-transform: uppercase;
+  padding: 0;
+  margin: 0;
 }
 .section-text {
   font-weight: 400;
   font-size: 14px;
   line-height: 1.7;
+  padding: 0;
+  margin: 0;
 }
 
 /* Features */
+.features {
+  padding-bottom: 94px;
+}
 .features-list {
   display: flex;
 }
@@ -216,18 +232,26 @@ a {
   line-height: 1.2;
   text-align: center;
   margin-bottom: 50px;
+  margin-top: 0;
+}
+.team-desc {
+  padding: 30px 0;
+  text-align: center;
 }
 .team-item {
   font-weight: 500;
   font-size: 16px;
   line-height: 1.2;
-  text-align: center;
+  margin: 0;
 }
 .team-text {
   font-weight: 400;
   font-size: 16px;
   line-height: 1.2;
-  text-align: center;
+  padding: 0;
+  margin-bottom: 0;
+  margin-top: 10px;
+}
 }
 .team-box {
   box-shadow: 0px 1px 3px rgba(0, 0, 0, 0.12), 0px 1px 1px rgba(0, 0, 0, 0.14),
@@ -285,14 +309,16 @@ a {
   margin-right: 8px;
 }
 .portfolio-btn {
-  background-color: #f5f4fa;
-  color: var(--primary-black-color);
-  font-family: Roboto, sans-serif;
-  border-radius: 4px;
-  border: 0;
   font-size: 16px;
   line-height: 1.6;
   padding: 6px 22px;
+  font-weight: 500;
+  border-radius: 4px;
+  border: 0;
+
+  background-color: #f5f4fa;
+  color: var(--primary-black-color);
+  font-family: Roboto, sans-serif;
 }
 .portfolio-btn:focus,
 .portfolio-btn:hover {
@@ -300,25 +326,40 @@ a {
   color: var(--primary-white-color);
 }
 
+/* Flex */
 .flex-element {
-  display: grid;
-  grid-template-columns: repeat(3, 3fr);
-  gap: 30px;
+  display: flex;
+  flex-wrap: wrap;
+  padding: 0;
+  margin: 0;
+  list-style: none;
+  margin-left: -30px;
+  margin-top: -30px;
 }
 .flex-item {
   border: 1px solid #eeeeee;
+}
+.flex-element > .flex-item {
+  flex-basis: calc(100% / 3 - var(--flex-element-gar));
+  margin-left: var(--flex-element-gar);
+  margin-top: var(--flex-element-gar);
+}
+.card-set {
+  padding: 20px 24px;
 }
 .portfolio-text {
   font-weight: 700;
   font-size: 18px;
   line-height: 2;
   letter-spacing: 0.06em;
-  padding: 0 24px;
+  padding: 0;
+  margin: 0;
 }
 .portfolio-item {
   color: var(--primary-text-color);
-  padding: 0 24px;
   font-weight: 400;
   font-size: 16px;
   line-height: 1.9;
+  padding: 0;
+  margin: 0;
 }
